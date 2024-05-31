@@ -1,0 +1,33 @@
+Prompt:
+
+In this kata you will be given a random string of letters and tasked with returning them as a string of 
+comma-separated sequences sorted alphabetically, with each sequence starting with an uppercase 
+character followed by n-1 lowercase characters, where n is the letter's alphabet position 1-26.
+
+Example
+
+alphaSeq("ZpglnRxqenU") -> "Eeeee,Ggggggg,Llllllllllll,Nnnnnnnnnnnnnn,Nnnnnnnnnnnnnn,Pppppppppppppppp,
+Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Uuuuuuuuuuuuuuuuuuuuu,Xxxxxxxxxxxxxxxxxxxxxxxx,
+Zzzzzzzzzzzzzzzzzzzzzzzzzz"
+
+Technical Details
+The string will include only letters.
+The first letter of each sequence is uppercase followed by n-1 lowercase.
+Each sequence is separated with a comma.
+Return value needs to be a string.
+
+
+
+Solution:
+
+function alphaSeq (str) {
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    var arr = str.toLowerCase().split('').sort();
+    var string = [];
+    for (let i = 0; i < arr.length; i++) {
+        var length = alphabet.indexOf(arr[i]) + 1;
+        var s = arr[i].repeat(length);
+        string.push(s[0].toUpperCase() + s.substring(1));
+    };
+    return string.join(',');
+}
