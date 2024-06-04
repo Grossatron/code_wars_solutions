@@ -61,4 +61,4 @@ function possiblyPerfect(key, answers) {
       }
    }
    return result + emptyKey === answers.length || result === 0 ? true : false
-}
+} 
