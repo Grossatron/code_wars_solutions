@@ -24,4 +24,4 @@ function evenNumbers(array, number) {
     }
   }
   return arr.reverse()
-}
+} 
