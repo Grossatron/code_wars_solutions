@@ -36,7 +36,7 @@ function closingInSum(n) {
   while (digits.length) {
     sum += digits.pop()
     sum += digits.shift() * 10 || 0;
-  }
+  } 
   
   return sum;
   
